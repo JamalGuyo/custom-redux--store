@@ -11,4 +11,13 @@ export class Store {
   get value() {
     return this.state;
   }
+
+  //   handles actions dispatched to store
+  dispatch(action) {
+    this.state = {
+      ...this.state,
+      todos: [...this.state.todos, action.payload],
+    };
+    console.log(this.state);
+  }
 }
